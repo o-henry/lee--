@@ -7,8 +7,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Geist', ...defaultTheme.fontFamily.sans],
-        mono: ['Geist Mono', ...defaultTheme.fontFamily.mono],
+        sans: ['DM Mono', ...defaultTheme.fontFamily.sans],
+        mono: ['DM Mono', ...defaultTheme.fontFamily.mono],
+        heading: ['Sequel', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -42,7 +43,9 @@ const config: Config = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography'), require('tailwindcss-animate')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('tailwindcss-animate')],
 }
 
 export default config

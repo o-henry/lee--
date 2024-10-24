@@ -7,6 +7,7 @@ import { transformerCopyButton } from '@rehype-pretty/transformers'
 import {
   transformerMetaHighlight,
   transformerNotationDiff,
+  transformerRenderWhitespace,
 } from '@shikijs/transformers'
 import { defineConfig } from 'astro/config'
 import rehypeKatex from 'rehype-katex'
@@ -16,6 +17,8 @@ import remarkEmoji from 'remark-emoji'
 import remarkMath from 'remark-math'
 import remarkToc from 'remark-toc'
 import sectionize from '@hbsnow/rehype-sectionize'
+import { transformerNotationSkip } from './src/lib/transformerNotationSkip'
+import { transformerDiffHighlight } from './src/lib/transformerDiffHighlight'
 
 import icon from 'astro-icon'
 
@@ -42,7 +45,12 @@ export default defineConfig({
         },
       ],
       rehypeHeadingIds,
-      rehypeKatex,
+      [
+        rehypeKatex,
+        {
+          strict: false,
+        }
+      ],
       // @ts-expect-error
       sectionize,
       [
@@ -55,10 +63,13 @@ export default defineConfig({
           transformers: [
             transformerNotationDiff(),
             transformerMetaHighlight(),
-            transformerCopyButton({
-              visibility: 'hover',
-              feedbackDuration: 1000,
-            }),
+            transformerRenderWhitespace(),
+            transformerNotationSkip(),
+            transformerDiffHighlight(),
+            // transformerCopyButton({
+            //   visibility: 'hover',
+            //   feedbackDuration: 1000,
+            // }),
           ],
         },
       ],

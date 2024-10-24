@@ -51,6 +51,7 @@ const projects = defineCollection({
     z.object({
       name: z.string(),
       description: z.string(),
+      date: z.string(),
       tags: z.array(z.string()),
       image: image().refine((img) => img.width === 1200 && img.height === 630, {
         message:

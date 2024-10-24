@@ -12,19 +12,21 @@ const { project } = Astro.props
 ---
 
 <div
-  class="overflow-hidden rounded-xl border transition-colors duration-300 ease-in-out hover:bg-secondary/50"
+  class="overflow-hidden rounded-xl bg-secondary/80 transition-colors duration-300 ease-in-out hover:bg-secondary/50"
 >
   <Link href={project.data.link} class="block" external>
-    <Image
+    <!--   <Image
       src={project.data.image}
       alt={project.data.name}
       width={400}
       height={200}
       class="w-full object-cover"
-    />
+    /> -->
     <div class="p-4">
-      <h3 class="mb-2 text-lg font-semibold">{project.data.name}</h3>
-      <p class="mb-4 text-sm text-muted-foreground">
+      <h3 class="font-guel mb-2 text-lg font-semibold">{project.data.name}</h3>
+      <p class="font-locus mb-4 text-sm text-muted-foreground">
+        <span class="font-bold text-gray-200">{project.data.date}</span>
+        <br />
         {project.data.description}
       </p>
       <div class="flex flex-wrap gap-2">

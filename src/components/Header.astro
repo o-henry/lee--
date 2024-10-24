@@ -4,8 +4,6 @@ import Link from '@/components/Link.astro'
 import MobileMenu from '@/components/ui/mobile-menu'
 import { ModeToggle } from '@/components/ui/mode-toggle'
 import { NAV_LINKS, SITE } from '@/consts'
-import { Image } from 'astro:assets'
-import logo from '../../public/static/logo.svg'
 ---
 
 <header
@@ -16,18 +14,17 @@ import logo from '../../public/static/logo.svg'
     <div class="flex flex-wrap items-center justify-between gap-4 py-4">
       <Link
         href="/"
-        class="flex flex-shrink-0 items-center gap-2 text-xl font-semibold transition-colors duration-300 hover:text-primary"
+        class="font-bantayog text-md flex flex-shrink-0 items-center gap-2 font-light transition-colors duration-300 hover:text-primary"
       >
-        <Image src={logo} alt="Logo" class="size-8" />
         {SITE.TITLE}
       </Link>
-      <div class="flex items-center gap-2 md:gap-4">
+      <div class="flex items-center gap-2 sm:gap-4">
         <nav class="hidden items-center gap-4 text-sm sm:gap-6 md:flex">
           {
             NAV_LINKS.map((item) => (
               <Link
                 href={item.href}
-                class="capitalize text-foreground/60 transition-colors hover:text-foreground/80"
+                class="font-bantayog font-light text-foreground/60 transition-colors hover:text-foreground/80"
               >
                 {item.label}
               </Link>
@@ -35,7 +32,7 @@ import logo from '../../public/static/logo.svg'
           }
         </nav>
         <MobileMenu client:load transition:persist />
-        <ModeToggle client:load transition:persist />
+        <!-- <ModeToggle client:load transition:persist /> -->
       </div>
     </div>
   </Container>
