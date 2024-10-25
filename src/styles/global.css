@@ -185,8 +185,9 @@ article {
 
   h1, h2, h3, h4, h5 {
     @apply font-heading;
+    font-weight: 400 !important;
   }
-      
+  
   article {
     @apply prose-headings:scroll-mt-20 prose-headings:break-words;
     @apply prose-p:break-words;
