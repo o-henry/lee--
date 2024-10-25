@@ -13,10 +13,15 @@
   font-size: 13px;
 }
 
+.font-anonymous { 
+  font-family: Anonymous Pro;
+}
+
 .font-noto {
   font-family: DM Mono, "Noto Sans KR", sans-serif;
   font-weight: 300;
   font-style: normal;
+  font-size: 12px;
 }
 
 .font-ia {
