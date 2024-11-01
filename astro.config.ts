@@ -49,7 +49,7 @@ export default defineConfig({
         rehypeKatex,
         {
           strict: false,
-        }
+        },
       ],
       // @ts-expect-error
       sectionize,

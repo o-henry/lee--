@@ -12,9 +12,11 @@ ViewModifer는 앱에서 자주 사용하는 스타일이 있을때 이를 앱 �
 > 같은 코드를 복사·붙여넣기 하다보면 수정이 필요할때 수정을 해야할곳이 늘어남을 의미하며, 이는 실수할 확률과 비례합니다. 이를 해결하기위해
 > `ViewModifier` 의 사용을 추천합니다. 해결책은 일반적으로 사용되는 modifier를 ViewModifier로 정의된 별도의 구조에 함께 저장하는 것입니다. 그러면 이 `ViewModifier` 구조를 여러 보기에 적용할 수 있습니다.
 
+<br />
+
 ## implementation
 
-```swift title="VIEW MODIFIER" showLineNumbers
+```swift title="view_modifier.swift" showLineNumbers
 struct HLabel: ViewModifier {
     func body(content: Content) → some View {
         content

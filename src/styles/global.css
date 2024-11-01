@@ -8,6 +8,102 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* audio */
+.audio-player {
+  --player-button-width: 3em;
+  --sound-button-width: 2em;
+  --space: 0.5em;
+  width: 15rem;
+  /* height: 15rem; */
+}
+
+.icon-container {
+  width: 100%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.audio-icon {
+  width: 90%;
+  height: 90%;
+}
+
+.controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  /* margin-top: 10px; */
+}
+
+.player-button {
+  background-color: transparent;
+  border: 0;
+  /* width: var(--player-button-width); */
+  /* margin-left: 0.1rem;
+  margin-right: 0.5rem; */
+  height: var(--player-button-width);
+  cursor: pointer;
+  padding: 0;
+}
+
+.player-button-left {
+  background-color: transparent;
+  border: 0;
+  /* width: var(--player-button-width); */
+  /* margin-left: 0.5rem; */
+  margin-right: 0.5rem;
+  height: var(--player-button-width);
+  cursor: pointer;
+  padding: 0; 
+}
+
+.player-button-right {
+  background-color: transparent;
+  border: 0;
+  /* width: var(--player-button-width); */
+  margin-left: 1rem;
+  /* margin-right: 0.5rem; */
+  height: var(--player-button-width);
+  cursor: pointer;
+  padding: 0; 
+}
+
+.timeline {
+  -webkit-appearance: none;
+  width: calc(100% - (var(--player-button-width) + var(--sound-button-width) + var(--space)));
+  height: 0.2em;
+  background-color: #f3f1f1;
+  border-radius: 2px;
+  background-image: linear-gradient(to right, #de5e97, #de5e97); /* 채우기 색상 */
+  background-size: 0% 100%; /* 기본적으로 채우기 없음 */
+  background-repeat: no-repeat;
+  margin-left: var(--space);
+}
+
+.timeline::-webkit-slider-thumb,
+.timeline::-moz-range-thumb,
+.timeline::-ms-thumb {
+  display: none; /* 원형 숨기기 */
+}
+
+
+.sound-button {
+  background-color: transparent;
+  border: 0;
+  width: var(--sound-button-width);
+  height: var(--sound-button-width);
+  margin-left: 1rem;
+  cursor: pointer;
+  padding: 0;
+}
+/* */
+
+
+/* font */
 .font-guel { 
   font-family: DM Mono, "Ownglyph guelmi";
   font-size: 13px;
@@ -19,7 +115,7 @@
 
 .font-noto {
   font-family: DM Mono, "Noto Sans KR", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   font-size: 12px;
 }
@@ -47,7 +143,6 @@
 .font-sequel {
   font-family: "Sequel";
 }
-
 @font-face { 
   font-family: 'Bantayog-Semilight';
   src: url('/fonts/Bantayog-Semilight.otf')
@@ -64,6 +159,8 @@
   font-weight: normal;
   font-style: normal;
 }
+/*  */
+
 
 .styles-module_calendar__sT1ND text {
   fill: currentColor;
