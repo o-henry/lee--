@@ -165,13 +165,9 @@ const Player = () => {
       <main className="grid min-h-screen place-items-center from-blue-200 to-indigo-900">
         <div>
           <section className="gap-4">
-            <div className="rounded bg-gray-900 p-3 shadow-lg">
+            <div className="rounded-sm bg-gray-900 p-3 shadow-lg">
               <div className="group relative">
-                <img
-                  className="block w-full rounded md:w-72"
-                  src="/assets/front/shin.jpeg"
-                  alt=""
-                />
+                /// TODO
                 <div className="absolute top-0 flex h-full w-full items-center justify-evenly rounded bg-black bg-opacity-0 transition group-hover:bg-opacity-60 group-hover:opacity-100">
                   <button className="translate-y-3 transform text-white opacity-0 transition hover:scale-110 group-hover:translate-y-0 group-hover:opacity-100">
                     <svg
@@ -192,7 +188,7 @@ const Player = () => {
                       width="40"
                       height="40"
                       fill="currentColor"
-                      class="bi bi-play-circle-fill"
+                      className="bi bi-play-circle-fill"
                       viewBox="0 0 16 16"
                     >
                       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z" />
@@ -205,7 +201,7 @@ const Player = () => {
                       width="20"
                       height="20"
                       fill="currentColor"
-                      class="bi bi-three-dots"
+                      className="bi bi-three-dots"
                       viewBox="0 0 16 16"
                     >
                       <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
