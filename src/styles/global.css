@@ -148,6 +148,11 @@ canvas {
   font-size: 0.8rem;
 }
 
+.font-ia-locus {
+  font-family: iA Writer Mono S, "locus_sangsang", monospace;
+  font-size: 0.8rem;
+}
+
 .font-bantayog { 
   font-family: 'Bantayog';
 }
