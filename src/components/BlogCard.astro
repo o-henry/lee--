@@ -2,7 +2,6 @@
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import { formatDate, parseAuthors, readingTime } from '@/lib/utils'
-import { Image } from 'astro:assets'
 import type { CollectionEntry } from 'astro:content'
 import Link from './Link.astro'
 
@@ -16,7 +15,6 @@ const { entry } = Astro.props as {
 
 const formattedDate = formatDate(entry.data.date)
 const readTime = readingTime(entry.body)
-const authors = await parseAuthors(entry.data.authors ?? [])
 ---
 
 <div

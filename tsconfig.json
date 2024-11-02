@@ -4,6 +4,7 @@
     "strictNullChecks": true,  // null 체크 유지
     "noUnusedLocals": false,   // 미사용 변수 경고 무시
     "noUnusedParameters": false, // 미사용 매개변수 경고 무시
+    "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
