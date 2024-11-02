@@ -13,13 +13,23 @@
 @tailwind utilities;
 
 
+/* styles/snow.css 또는 다른 CSS 파일에 추가 */
+section[aria-label="Phaser Game"] {
+  width: 100%;
+  max-width: 800px; /* 필요에 따라 변경 */
+}
+
+canvas {
+  width: 100% !important;
+  height: auto !important;
+}
 
 /* audio */
 .audio-player {
-  --player-button-width: 3em;
+  /* --player-button-width: 3em;
   --sound-button-width: 2em;
   --space: 0.5em;
-  width: 15rem;
+  width: 15rem; */
   /* height: 15rem; */
 }
 
@@ -79,10 +89,10 @@
 
 .timeline {
   -webkit-appearance: none;
-  width: calc(100% - (var(--player-button-width) + var(--sound-button-width) + var(--space)));
-  height: 0.2em;
+  width: calc(92%);
+  height: 0.3em;
   background-color: #f3f1f1;
-  border-radius: 2px;
+  border-radius: 0px;
   background-image: linear-gradient(to right, #de5e97, #de5e97); /* 채우기 색상 */
   background-size: 0% 100%; /* 기본적으로 채우기 없음 */
   background-repeat: no-repeat;
