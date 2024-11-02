@@ -51,7 +51,6 @@ export default defineConfig({
           strict: false,
         },
       ],
-      // @ts-expect-error
       sectionize,
       [
         rehypePrettyCode,

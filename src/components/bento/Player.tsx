@@ -92,16 +92,7 @@ const Player = () => {
 
       <main className="">
         <div>
-          {/* <section className="gap-4"> */}
-          {/* <div className="rounded bg-gray-800 p-3 shadow-lg"> */}
           <div className="relative flex h-full w-full flex-col justify-between p-6">
-            <img
-              className="w-[55%] rounded-xl border-border"
-              src="/assets/winter_bg/brooke-cagle-sg4Mw88fe_U-unsplash.jpg"
-              alt=""
-            />
-
-            {/* <div className="absolute top-0 flex h-full w-full items-center justify-evenly rounded bg-black bg-opacity-0 transition group-hover:bg-opacity-60 group-hover:opacity-100"> */}
             <div className="flex min-w-0 flex-1 flex-col justify-end overflow-hidden">
               <div className="mt-6 flex items-center justify-center">
                 <button
@@ -217,19 +208,7 @@ const Player = () => {
             </div>
           </div>
 
-          <div className="pt-1">
-            {/* <input
-                  type="range"
-                  className="timeline"
-                  value={timelinePosition}
-                  onChange={handleTimelineChange}
-                  max="100"
-                /> */}
-            {/* <h3 className="pt-1 text-center text-lg text-white">playing</h3> */}
-            {/* <p className="text-gray-400">PLAYING</p> */}
-          </div>
-          {/* </div> */}
-          {/* </section> */}
+          <div className="pt-1"></div>
         </div>
       </main>
     </div>
