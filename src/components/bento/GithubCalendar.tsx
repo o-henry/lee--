@@ -71,13 +71,37 @@ const GithubCalendar: FunctionComponent<Props> = ({ username, ...props }) => {
     <>
       <div className="m-4 hidden sm:block">
         <Calendar
-          data={selectLastNDays(data.contributions, 133)}
+          data={selectLastNDays(data.contributions, 200)}
           theme={{
-            dark: ['#1A1A1A', '#E9D3B6'],
+            dark: [
+              'hsl(0, 0%, 22%)',
+              '#486665',
+              '#7DB9B6',
+              '#F5E9CF',
+              '#E96479',
+            ],
+          }}
+          labels={{
+            months: [
+              'Jan',
+              'Feb',
+              'Mar',
+              'Apr',
+              'May',
+              'Jun',
+              'Jul',
+              'Aug',
+              'Sep',
+              'Oct',
+              'Nov',
+              'Dec',
+            ],
+            totalCount: '{{count}} contributions in {{year}}',
+            weekdays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
           }}
           colorScheme="dark"
-          blockSize={20}
-          blockMargin={6}
+          blockSize={14}
+          blockMargin={5}
           blockRadius={7}
           {...props}
           maxLevel={4}
@@ -87,13 +111,20 @@ const GithubCalendar: FunctionComponent<Props> = ({ username, ...props }) => {
       </div>
       <div className="m-4 scale-110 sm:hidden">
         <Calendar
-          data={selectLastNDays(data.contributions, 60)}
+          data={selectLastNDays(data.contributions, 200)}
           theme={{
-            dark: ['#1A1A1A', '#E9D3B6'],
+            // dark: ['#1A1A1A', '#2acf2d'],
+            dark: [
+              'hsl(0, 0%, 22%)',
+              '#4D455D',
+              '#7DB9B6',
+              '#F5E9CF',
+              '#E96479',
+            ],
           }}
           colorScheme="dark"
-          blockSize={20}
-          blockMargin={6}
+          blockSize={14}
+          blockMargin={5}
           blockRadius={7}
           {...props}
           maxLevel={4}

@@ -162,12 +162,12 @@ canvas {
 }
 @font-face { 
   font-family: 'Bantayog-Semilight';
-  src: url('/fonts/Bantayog-Semilight.otf')
+  src: url('../../public/fonts/Bantayog-Semilight.otf')
 }
 
 @font-face {
   font-family: 'Ownglyph_guelmi';
-  src: url('/fonts/Ownglyph_guelmi.ttf')
+  src: url('../../public/fonts/Ownglyph_guelmi.ttf')
 }
 
 @font-face {

@@ -4,10 +4,7 @@ const Player = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTrack, setCurrentTrack] = useState(0)
-  // const [timelinePosition, setTimelinePosition] = useState(0)
-  // const [isMuted, setIsMuted] = useState(false)
 
-  // mx-auto mt-8 grid max-w-[800px] grid-cols-3 gap-5 px-4
   // 오디오 파일 목록
   const playlist = [
     {
@@ -39,8 +36,7 @@ const Player = () => {
   const handlePlayPause = () => {
     if (audioRef.current) {
       if (audioRef.current.paused) {
-        audioRef.current.play()
-        setIsPlaying(true)
+        audioRef.current.play().then(() => setIsPlaying(true))
       } else {
         audioRef.current.pause()
         setIsPlaying(false)
@@ -62,8 +58,7 @@ const Player = () => {
     if (audioRef.current) {
       audioRef.current.src = playlist[currentTrack].src
       audioRef.current.volume = 0.2
-      audioRef.current.play()
-      setIsPlaying(true)
+      audioRef.current.play().then(() => setIsPlaying(true))
     }
   }, [currentTrack])
 
@@ -120,7 +115,7 @@ const Player = () => {
                       width="64px"
                       height="64px"
                       viewBox="0 0 24 24"
-                      className="h-3 w-3 text-gray-600"
+                      className="h-3.5 w-3.5 text-gray-600"
                       fill="#FFFFFF"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -147,7 +142,7 @@ const Player = () => {
                       height="64px"
                       viewBox="0 0 24 24"
                       fill="#FFFFFF"
-                      className="h-4 w-4 text-black"
+                      className="h-3.5 w-3.5 text-black"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -188,9 +183,6 @@ const Player = () => {
                     </g>
                   </svg>
                 </button>
-                <p className="font-ia-locus pl-3" style={{ fontSize: '10px' }}>
-                  playing - {playlist[currentTrack].title}
-                </p>
               </div>
             </div>
           </div>
