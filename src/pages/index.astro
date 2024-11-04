@@ -15,21 +15,20 @@ import { Icon } from 'astro-icon/components'
       <!-- Phaser 게임 번들 -->
     </head>
     <body>
-      <section class="mx-auto max-w-[800px] px-4" aria-label="Phaser Game">
-        <PhaserGame />
-        <!-- 게임 -->
-      </section>
+      <!-- <section class="mx-auto px-8" aria-label="Phaser Game"> -->
+      <PhaserGame />
+      <!-- 게임 -->
+      <!-- </section> -->
     </body>
   </html>
 
-  <section class="mx-auto flex max-w-[800px] justify-start">
-    <Player client:load />
-  </section>
+  <div class="my-6"></div>
+
   <section
     class="md:[grid-template-areas:
       'a_m_b_n'_'d_e_e_c'_'h_f_f_g'_'h_i_j_k'] mx-auto
       grid
-      max-w-[375px]
+      max-w-[746px]
       max-w-screen-md
       grid-cols-4
       gap-4
@@ -37,16 +36,27 @@ import { Icon } from 'astro-icon/components'
       [grid-template-areas:'a_m'_'b_b'_'b_b'_'b_b'_'e_e'_'h_i'_'h_c'_'k_c'_'d_d'_'d_d'_'g_g'_'g_g'_'f_f'_'j_j'_'j_j']
       *:rounded-3xl
       *:border
-      sm:max-w-screen-md
       sm:grid-cols-4
       sm:[grid-template-areas:'a_m_b_n'_'d_e_e_c'_'h_f_f_g'_'h_i_j_k']
       md:px-0
-      xl:max-w-screen-md
       xl:grid-cols-4
       xl:[grid-template-areas:'a_m_b_n'_'d_e_e_c'_'h_f_f_g'_'h_i_j_k']
       xl:[&:hover:has(>.has-overlay:hover)>.first>.overlay]:opacity-100
       xl:[&:hover>*:not(.first):hover_.overlay]:opacity-100"
   >
+    <div
+      class="has-overlay relative flex aspect-square items-center justify-center [grid-area:m] hover:bg-none"
+    >
+      <div
+        class="overlay xl:opacity-1 absolute inset-0 size-full rounded-xl bg-gray-800 bg-gradient-to-r from-slate-900 to-slate-700 transition-opacity duration-200"
+      >
+      </div>
+      <Player client:load />
+      <div
+        class="absolute bottom-0 right-0 m-3 flex w-fit items-end rounded-full border bg-white bg-gradient-to-r from-blue-200 to-cyan-200 p-1 text-primary transition-all duration-300 hover:rotate-12 hover:ring-1 hover:ring-primary"
+      >
+      </div>
+    </div>
     <Link
       href={SOCIAL_LINKS.find((link) => link.label === 'GitHub')?.href || '#'}
       title="Visit my GitHub profile"
@@ -54,17 +64,21 @@ import { Icon } from 'astro-icon/components'
       external
     >
       <div
-        class="has-overlay relative flex aspect-square items-center justify-center [grid-area:m] hover:bg-none"
+        class="has-overlay relative flex aspect-square items-center justify-center [grid-area:b] hover:bg-none"
       >
         <div
-          class="overlay absolute inset-0 size-full rounded-3xl bg-gray-900 transition-opacity duration-200 xl:opacity-0"
+          class="overlay xl:opacity-1 absolute inset-0 size-full rounded-xl bg-gray-800 transition-opacity duration-200"
         >
         </div>
         <Icon
           name="mdi:github"
-          class="absolute z-[1] size-1/2 text-primary sm:size-24"
+          class="absolute z-[1] size-1/2 text-primary sm:size-20"
           aria-hidden="true"
         />
+        <div
+          class="absolute bottom-0 right-0 m-3 flex w-fit items-end rounded-full border bg-white bg-gradient-to-r from-amber-200 to-yellow-400 p-1 text-primary transition-all duration-300 hover:rotate-12 hover:ring-1 hover:ring-primary"
+        >
+        </div>
       </div>
     </Link>
 
@@ -73,17 +87,17 @@ import { Icon } from 'astro-icon/components'
         class="has-overlay relative flex aspect-square items-center justify-center [grid-area:a] hover:bg-none"
       >
         <div
-          class="overlay absolute inset-0 size-full rounded-3xl bg-gray-900 transition-opacity duration-200 xl:opacity-0"
+          class="overlay xl:opacity-1 absolute inset-0 size-full rounded-xl bg-gray-800 transition-opacity duration-200"
         >
         </div>
 
         <Icon
           name="mdi:at"
-          class="absolute z-[1] size-1/2 text-primary sm:size-24"
+          class="absolute z-[1] size-1/2 text-primary sm:size-20"
           aria-hidden="true"
         />
         <div
-          class="absolute bottom-0 right-0 m-3 flex w-fit items-end rounded-full border bg-secondary/50 p-1 text-primary transition-all duration-300 hover:rotate-12 hover:ring-1 hover:ring-primary"
+          class="absolute bottom-0 right-0 m-3 flex w-fit items-end rounded-full border bg-white bg-gradient-to-r from-violet-200 to-pink-200 p-1 text-primary transition-all duration-300 hover:rotate-12 hover:ring-1 hover:ring-primary"
         >
         </div>
       </div>

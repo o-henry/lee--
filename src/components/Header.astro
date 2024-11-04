@@ -10,7 +10,9 @@ import { NAV_LINKS, SITE } from '@/consts'
   transition:persist
 >
   <Container>
-    <div class="flex flex-wrap items-center justify-between gap-4 py-4">
+    <div
+      class="flex flex-wrap items-center justify-between gap-4 py-4 sm:px-0 xl:px-0"
+    >
       <Link
         href="/"
         class="font-bantayog text-md flex flex-shrink-0 items-center gap-2 font-light transition-colors duration-300 hover:text-primary"
@@ -32,6 +34,7 @@ import { NAV_LINKS, SITE } from '@/consts'
           }
         </nav>
         <MobileMenu client:load transition:persist />
+
         <!-- <ModeToggle client:load transition:persist /> -->
       </div>
     </div>

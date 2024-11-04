@@ -160,6 +160,19 @@ canvas {
 .font-sequel {
   font-family: "Sequel";
 }
+
+.font-line { 
+  font-family: LineSeedJPEN, "LineSeedKR";
+  font-weight: 900 !important;
+}
+
+@font-face {
+  font-family: 'LINESeedKR-Bd';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
 @font-face { 
   font-family: 'Bantayog-Semilight';
   src: url('../../public/fonts/Bantayog-Semilight.otf')
@@ -264,7 +277,7 @@ article {
   ==========
   */
   blockquote > p {
-    font-family: "iA Writer Mono S", 'locus_sangsang' !important;
+    font-family: "iA Writer Mono S", 'locus_sangsang', monospace !important;
     display: inline;
   }
   blockquote > p:before {
@@ -299,7 +312,7 @@ article {
 
   h1, h2, h3, h4, h5 {
     @apply font-heading;
-    font-weight: 400 !important;
+    font-weight: 900 !important;
   }
   
   article {

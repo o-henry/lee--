@@ -78,10 +78,10 @@ const Player = () => {
                   // className="rounded-full bg-white p-3 hover:bg-gray-300 focus:outline-none"
                 >
                   <svg
-                    width="64px"
+                    width="648x"
                     height="64px"
                     viewBox="0 0 24 24"
-                    className="h-3 w-3 text-gray-600"
+                    className="h-4 w-4 text-gray-600"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     transform="matrix(-1, 0, 0, 1, 0, 0)"
@@ -105,17 +105,13 @@ const Player = () => {
                   </svg>
                 </button>
 
-                <button
-                  onClick={handlePlayPause}
-                  // className="mx-4 rounded-full bg-white p-4 hover:bg-gray-300 focus:outline-none"
-                  className="mx-4"
-                >
+                <button onClick={handlePlayPause} className="mx-3">
                   {isPlaying ? (
                     <svg
                       width="64px"
                       height="64px"
                       viewBox="0 0 24 24"
-                      className="h-3.5 w-3.5 text-gray-600"
+                      className="h-5 w-5 text-gray-600"
                       fill="#FFFFFF"
                       xmlns="http://www.w3.org/2000/svg"
                     >
@@ -142,7 +138,7 @@ const Player = () => {
                       height="64px"
                       viewBox="0 0 24 24"
                       fill="#FFFFFF"
-                      className="h-3.5 w-3.5 text-black"
+                      className="h-5 w-5 text-black"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
@@ -161,7 +157,7 @@ const Player = () => {
                     width="64px"
                     height="64px"
                     viewBox="0 0 24 24"
-                    className="h-3 w-3 text-gray-600"
+                    className="h-4 w-4 text-gray-600"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >

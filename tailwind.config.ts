@@ -9,7 +9,7 @@ const config: Config = {
       fontFamily: {
         sans: ['DM Mono', ...defaultTheme.fontFamily.sans],
         mono: ['DM Mono', ...defaultTheme.fontFamily.mono],
-        heading: ['Bantayog', ...defaultTheme.fontFamily.sans],
+        heading: ['LINESeedKR-Bd', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         background: 'hsl(var(--background))',
