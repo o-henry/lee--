@@ -30,12 +30,13 @@ const projects = await getCollection('projects')
           2020.02-2020.06 : IPS Papaya(주)
           <br />
           <h1 class="text-2xl font-semibold">Tech Stack</h1>
+          <br />
           <p class="text-sm">
             Swift · SwiftUI
             <br />
             Typescript · Node.js
             <br />
-            Kotlin · Java
+            Kotlin
             <br />
             Python
           </p>
@@ -45,6 +46,7 @@ const projects = await getCollection('projects')
         </p>
 
         <h2 class="mb-4 text-2xl font-semibold">Projects</h2>
+        <br />
         <div class="grid gap-4 sm:grid-cols-1 lg:grid-cols-1">
           {projects.map((project) => <ProjectCard project={project} />)}
         </div>

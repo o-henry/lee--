@@ -13,11 +13,10 @@ export type Link = {
 }
 
 export const SITE: Site = {
-  TITLE: 'henry',
-  DESCRIPTION:
-    'LOG',
-    EMAIL: 'c.henry.9209@gmail.com',
-    NUM_POSTS_ON_HOMEPAGE: 5,
+  TITLE: 'lab',
+  DESCRIPTION: 'LOG',
+  EMAIL: 'c.henry.9209@gmail.com',
+  NUM_POSTS_ON_HOMEPAGE: 5,
   POSTS_PER_PAGE: 4,
   SITEURL: 'https://henry-alpha.vercel.app',
 }
