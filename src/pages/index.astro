@@ -1,106 +1,114 @@
 ---
 import Player from '@/components/bento/Player'
+import Container from '@/components/Container.astro'
 import Link from '@/components/Link.astro'
 import PhaserGame from '@/components/ui/phaser'
 import { SITE, SOCIAL_LINKS } from '@/consts'
 import Layout from '@/layouts/Layout.astro'
 import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
 ---
 
 <Layout title="Home" description={SITE.DESCRIPTION}>
-  <html>
-    <head>
-      <script is:inline src="/bundle.min.js" defer></script>
-      <!-- <script src="https://unpkg.com/wavesurfer.js"></script> -->
-      <!-- Phaser 게임 번들 -->
-    </head>
-    <body>
-      <!-- <section class="mx-auto px-8" aria-label="Phaser Game"> -->
-      <PhaserGame />
-      <!-- 게임 -->
-      <!-- </section> -->
-    </body>
-  </html>
+  <Container>
+    <html>
+      <head>
+        <script is:inline src="/bundle.min.js" defer></script>
+        <!-- <script src="https://unpkg.com/wavesurfer.js"></script> -->
+        <!-- Phaser 게임 번들 -->
+      </head>
+      <body>
+        <div class="font-locus pt-8">Henry's Playground</div>
 
-  <div class="my-6"></div>
+        <div class="pb-6"></div>
 
-  <section
-    class="md:[grid-template-areas:
-      'a_m_b_n'_'d_e_e_c'_'h_f_f_g'_'h_i_j_k'] mx-auto
+        <section class="mx-auto" aria-label="Phaser Game">
+          <PhaserGame />
+          <!-- 게임 -->
+        </section>
+      </body>
+    </html>
+
+    <div class="my-6"></div>
+
+    <section
+      class="md:[grid-template-areas:
+      'a_m_m_n'_'e_e_e_c'_'h_f_f_g'_'h_i_j_k'] *:rounded3xl
+      mx-auto
       grid
       max-w-[746px]
       max-w-screen-md
       grid-cols-4
       gap-4
-      px-4
       [grid-template-areas:'a_m'_'b_b'_'b_b'_'b_b'_'e_e'_'h_i'_'h_c'_'k_c'_'d_d'_'d_d'_'g_g'_'g_g'_'f_f'_'j_j'_'j_j']
-      *:rounded-3xl
-      *:border
       sm:grid-cols-4
-      sm:[grid-template-areas:'a_m_b_n'_'d_e_e_c'_'h_f_f_g'_'h_i_j_k']
+      sm:[grid-template-areas:'a_m_m_n'_'e_e_e_c'_'h_f_f_g'_'h_i_j_k']
       md:px-0
       xl:grid-cols-4
-      xl:[grid-template-areas:'a_m_b_n'_'d_e_e_c'_'h_f_f_g'_'h_i_j_k']
+      xl:[grid-template-areas:'a_m_m_n'_'e_e_e_c'_'h_f_f_g'_'h_i_j_k']
       xl:[&:hover:has(>.has-overlay:hover)>.first>.overlay]:opacity-100
       xl:[&:hover>*:not(.first):hover_.overlay]:opacity-100"
-  >
-    <div
-      class="has-overlay relative flex aspect-square items-center justify-center [grid-area:m] hover:bg-none"
     >
-      <div
-        class="overlay xl:opacity-1 absolute inset-0 size-full rounded-xl bg-gray-800 bg-gradient-to-r from-slate-900 to-slate-700 transition-opacity duration-200"
-      >
-      </div>
-      <Player client:load />
-      <div
-        class="absolute bottom-0 right-0 m-3 flex w-fit items-end rounded-full border bg-white bg-gradient-to-r from-blue-200 to-cyan-200 p-1 text-primary transition-all duration-300 hover:rotate-12 hover:ring-1 hover:ring-primary"
-      >
-      </div>
-    </div>
-    <Link
-      href={SOCIAL_LINKS.find((link) => link.label === 'GitHub')?.href || '#'}
-      title="Visit my GitHub profile"
-      aria-label="Visit my GitHub profile"
-      external
-    >
-      <div
-        class="has-overlay relative flex aspect-square items-center justify-center [grid-area:b] hover:bg-none"
-      >
+      <Link href="mailto:c.henry.9209@gmail.com" external>
         <div
-          class="overlay xl:opacity-1 absolute inset-0 size-full rounded-xl bg-gray-800 transition-opacity duration-200"
+          class="has-overlay relative flex aspect-square items-center justify-center [grid-area:a] hover:bg-none"
         >
-        </div>
-        <Icon
-          name="mdi:github"
-          class="absolute z-[1] size-1/2 text-primary sm:size-20"
-          aria-hidden="true"
-        />
-        <div
-          class="absolute bottom-0 right-0 m-3 flex w-fit items-end rounded-full border bg-white bg-gradient-to-r from-amber-200 to-yellow-400 p-1 text-primary transition-all duration-300 hover:rotate-12 hover:ring-1 hover:ring-primary"
-        >
-        </div>
-      </div>
-    </Link>
+          <div
+            class="overlay xl:opacity-1 absolute inset-0 size-full rounded-xl bg-gradient-to-r from-amber-200 to-yellow-400 transition-opacity duration-200"
+          >
+          </div>
 
-    <Link href="mailto:c.henry.9209@gmail.com" external>
+          <Icon
+            name="mdi:at"
+            class="absolute z-[1] size-1/2 text-primary sm:size-20"
+            aria-hidden="true"
+          />
+          <div
+            class="absolute bottom-0 right-0 m-3 flex w-fit items-end rounded-full border bg-white bg-gradient-to-r from-violet-200 to-pink-200 p-1 text-primary transition-all duration-300 hover:rotate-12 hover:ring-1 hover:ring-primary"
+          >
+          </div>
+        </div>
+      </Link>
+
       <div
-        class="has-overlay relative flex aspect-square items-center justify-center [grid-area:a] hover:bg-none"
+        class="has-overlay relative flex items-center justify-center [grid-area:m] hover:bg-none"
       >
         <div
-          class="overlay xl:opacity-1 absolute inset-0 size-full rounded-xl bg-gray-800 transition-opacity duration-200"
+          class="overlay xl:opacity-1 absolute inset-0 size-full rounded-xl bg-white transition-opacity duration-200"
         >
         </div>
-
-        <Icon
-          name="mdi:at"
-          class="absolute z-[1] size-1/2 text-primary sm:size-20"
-          aria-hidden="true"
-        />
+        <Player client:load />
         <div
-          class="absolute bottom-0 right-0 m-3 flex w-fit items-end rounded-full border bg-white bg-gradient-to-r from-violet-200 to-pink-200 p-1 text-primary transition-all duration-300 hover:rotate-12 hover:ring-1 hover:ring-primary"
+          class="absolute bottom-0 right-0 m-3 flex w-fit items-end rounded-full border bg-white bg-gradient-to-r from-blue-200 to-cyan-200 p-1 text-primary transition-all duration-300 hover:rotate-12 hover:ring-1 hover:ring-primary"
         >
         </div>
       </div>
-    </Link>
-  </section>
+      <Link
+        href={SOCIAL_LINKS.find((link) => link.label === 'GitHub')?.href || '#'}
+        title="Visit my GitHub profile"
+        aria-label="Visit my GitHub profile"
+        external
+      >
+        <div
+          class="has-overlay relative flex aspect-square items-center justify-center [grid-area:n] hover:bg-none"
+        >
+          <div
+            class="overlay xl:opacity-1 absolute inset-0 size-full rounded-xl bg-orange-50 transition-opacity duration-200"
+          >
+          </div>
+          <Image
+            src="/static/octocat-remove.png"
+            alt="github"
+            width={120}
+            height={120}
+            class="absolute z-[1] size-max text-white sm:size-max"
+          />
+          <div
+            class="absolute bottom-0 right-0 m-3 flex w-fit items-end rounded-full border bg-white bg-gradient-to-r from-amber-200 to-yellow-400 p-1 text-primary transition-all duration-300 hover:rotate-12 hover:ring-1 hover:ring-primary"
+          >
+          </div>
+        </div>
+      </Link>
+    </section>
+  </Container>
 </Layout>

@@ -16,7 +16,7 @@ const projects = await getCollection('projects')
     <section>
       <div class="min-w-full">
         <h1 class="mb-4 text-3xl font-bold">About</h1>
-        <p class="font-locus mb-8 text-xl dark:prose-invert">
+        <p class="font-locus mb-8 text-xl leading-normal dark:prose-invert">
           안녕하세요. 저는 이찬행 이라고 합니다. 컴퓨터 공학과를 중퇴 후,
           부트캠프 과정을 수료, 리액트 프론트엔드 개발을 시작하였으며 이후
           다양한 언어와 다양한 기술들을 학습하였고 현재는 iOS 앱 개발을 하고
@@ -25,31 +25,20 @@ const projects = await getCollection('projects')
           <br />
           <br />
 
-          2019-2020 : 코드스테이츠 부트캠프
+          * 2019-2020 : 코드스테이츠 부트캠프
           <br />
-          2020.02-2020.06 : IPS Papaya(주)
+          * 2020.02-2020.06 : IPS Papaya(주)
           <br />
-          <h1 class="text-2xl font-semibold">Tech Stack</h1>
-          <br />
-          <p class="text-sm">
-            Swift · SwiftUI
-            <br />
-            Typescript · Node.js
-            <br />
-            Kotlin
-            <br />
-            Python
-          </p>
+
+          <!-- <div class="font-google">Tech Stack</div> -->
+          * Swift · SwiftUI · Typescript · Node.js · Kotlin · Python
 
           <br />
-          <br />
+          <!-- <div class="font-google">Project</div> -->
+          <div class="grid gap-4 sm:grid-cols-1 lg:grid-cols-1">
+            {projects.map((project) => <ProjectCard project={project} />)}
+          </div>
         </p>
-
-        <h2 class="mb-4 text-2xl font-semibold">Projects</h2>
-        <br />
-        <div class="grid gap-4 sm:grid-cols-1 lg:grid-cols-1">
-          {projects.map((project) => <ProjectCard project={project} />)}
-        </div>
       </div>
     </section>
   </Container>

@@ -11,7 +11,7 @@ const { project } = Astro.props
 ---
 
 <div
-  class="overflow-hidden rounded-xl bg-secondary/80 transition-colors duration-300 ease-in-out hover:bg-secondary/50"
+  class="overflow-hidden rounded-xl bg-secondary/10 transition-colors duration-300 ease-in-out hover:bg-secondary/50"
 >
   <Link href={project.data.link} class="block" external>
     <!--   <Image
@@ -24,7 +24,7 @@ const { project } = Astro.props
     <div class="p-4">
       <h3 class="font-guel mb-2 text-lg font-semibold">{project.data.name}</h3>
       <p class="font-locus mb-4 text-sm text-muted-foreground">
-        <span class="font-bold text-gray-200">{project.data.date}</span>
+        <span class="text-gray-500">{project.data.date}</span>
         <br />
         {project.data.description}
       </p>

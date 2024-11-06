@@ -1,7 +1,6 @@
 ---
 import Container from '@/components/Container.astro'
 import Link from '@/components/Link.astro'
-import MobileMenu from '@/components/ui/mobile-menu'
 import { NAV_LINKS, SITE } from '@/consts'
 ---
 
@@ -10,33 +9,23 @@ import { NAV_LINKS, SITE } from '@/consts'
   transition:persist
 >
   <Container>
-    <div
-      class="flex flex-wrap items-center justify-between gap-4 py-4 sm:px-0 xl:px-0"
-    >
+    <div class="flex gap-6 !px-0 py-4 sm:px-0 xl:px-0">
       <Link
         href="/"
-        class="font-bantayog text-md flex flex-shrink-0 items-center gap-2 font-light transition-colors duration-300 hover:text-primary"
+        class="font-bantayog text-md tems-center font-light transition-colors duration-300 hover:text-primary"
       >
         {SITE.TITLE}
       </Link>
-
-      <div class="flex items-center gap-2 sm:gap-4">
-        <nav class="hidden items-center gap-4 text-sm sm:gap-6 md:flex">
-          {
-            NAV_LINKS.map((item) => (
-              <Link
-                href={item.href}
-                class="font-bantayog font-light text-foreground/60 transition-colors hover:text-foreground/80"
-              >
-                {item.label}
-              </Link>
-            ))
-          }
-        </nav>
-        <MobileMenu client:load transition:persist />
-
-        <!-- <ModeToggle client:load transition:persist /> -->
-      </div>
+      {
+        NAV_LINKS.map((item) => (
+          <Link
+            href={item.href}
+            class="font-bantayog font-light transition-colors hover:text-foreground/80"
+          >
+            {item.label}
+          </Link>
+        ))
+      }
     </div>
   </Container>
 </header>
