@@ -70,10 +70,10 @@ const Player = () => {
 
       <main className="">
         <div>
-          <div className="relative flex h-full w-full flex-col justify-between p-6">
+          <div className="relative flex h-full w-full flex-col justify-between">
             <div className="flex min-w-0 flex-1 flex-col justify-end overflow-hidden">
               <div className="flex items-center justify-center">
-                <button
+                {/* <button
                   onClick={handlePrev}
                   // className="rounded-full bg-white p-3 hover:bg-gray-300 focus:outline-none"
                 >
@@ -103,15 +103,15 @@ const Player = () => {
                       ></path>
                     </g>
                   </svg>
-                </button>
+                </button> */}
 
-                <button onClick={handlePlayPause} className="mx-3">
+                <button onClick={handlePlayPause} className="">
                   {isPlaying ? (
                     <svg
                       width="64px"
                       height="64px"
                       viewBox="0 0 24 24"
-                      className="h-5 w-5 text-gray-600"
+                      className="h-4 w-4 text-gray-600"
                       fill="#000000"
                       xmlns="http://www.w3.org/2000/svg"
                     >

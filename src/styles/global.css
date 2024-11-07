@@ -125,6 +125,14 @@ canvas {
   font-family: Anonymous Pro;
 }
 
+.font-suite { 
+  font-family: DM Mono, 'SUITE-Regular', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 2px; 
+}
+
 .font-noto {
   font-family: DM Mono, "Noto Sans KR", sans-serif;
   font-weight: 200;
@@ -174,6 +182,20 @@ canvas {
   font-family: 'LINESeedKR-Bd';
   src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
   font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ONE-Mobile-Title';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Title.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SUITE-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -297,13 +319,13 @@ article {
     --border: 0 0% 14.9%;
     --ring: 0 0% 83.1%; */
 
-    --chart-1: 34 54% 81%;
+    /* --chart-1: 34 54% 81%;
     --chart-2: 34 34% 73%;
     --chart-3: 35 22% 65%;
     --chart-4: 35 16% 57%;
     --chart-5: 35 12% 41%;
     --chart-6: 33 12% 33%;
-    --chart-7: 32 12% 25%;
+    --chart-7: 32 12% 25%; */
   }
 
   *,
@@ -404,7 +426,7 @@ article {
 
       /* Code block titles */
       [data-rehype-pretty-code-title] {
-        @apply break-words rounded-t-md bg-gray-50 border-x border-t px-4 py-2 text-sm font-medium text-foreground font-google;
+        @apply break-words  bg-gray-50 px-4 py-2 text-sm font-medium text-foreground font-google;
 
         /* Remove top margin from code block if a title is present */
         & + pre {
@@ -414,7 +436,7 @@ article {
 
       /* Code block styles */
       pre {
-        @apply static max-h-[600px] overflow-auto rounded-md border bg-white py-4 text-sm leading-loose;
+        @apply static max-h-[600px] overflow-auto rounded-md bg-white py-4 text-sm leading-loose;
 
 
         /* Code block content */
@@ -433,7 +455,6 @@ article {
 
           /* For each line in the code block */
           > [data-line] {
-            @apply px-4;
           }
 
           /* Highlighted lines */

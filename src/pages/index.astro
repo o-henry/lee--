@@ -18,7 +18,7 @@ import { Image } from 'astro:assets'
         <!-- Phaser 게임 번들 -->
       </head>
       <body>
-        <div class="font-locus pt-8">Henry's Playground</div>
+        <div class="font-locus pt-2">Henry's Playground</div>
 
         <div class="pb-6"></div>
 
@@ -74,7 +74,7 @@ import { Image } from 'astro:assets'
         class="has-overlay relative flex items-center justify-center [grid-area:m] hover:bg-none"
       >
         <div
-          class="overlay xl:opacity-1 absolute inset-0 size-full rounded-xl bg-white transition-opacity duration-200"
+          class="overlay xl:opacity-1 absolute inset-0 size-full rounded-xl bg-gradient-to-r from-red-200 to-yellow-200 transition-opacity duration-200"
         >
         </div>
         <Player client:load />
