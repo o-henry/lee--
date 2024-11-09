@@ -114,13 +114,13 @@ const { Content, headings } = await post.render()
         </div>
       </div>
 
-      <PostNavigation prevPost={prevPost} nextPost={nextPost} />
+      <!-- <PostNavigation prevPost={prevPost} nextPost={nextPost} /> -->
     </section>
 
     {headings.length > 0 && <TableOfContents headings={headings} />}
 
     <article
-      class="font-noto traking-wider prose prose-sm prose-neutral col-start-2 max-w-none dark:prose-invert"
+      class="font-nanum traking-wider prose prose-sm prose-neutral col-start-2 max-w-none dark:prose-invert"
     >
       <Content />
     </article>

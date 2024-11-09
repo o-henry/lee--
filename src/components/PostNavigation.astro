@@ -7,7 +7,7 @@ import { Icon } from 'astro-icon/components'
 const { prevPost, nextPost } = Astro.props
 ---
 
-<div class="col-start-2 flex flex-col gap-4 sm:flex-row">
+<div class="font-google col-start-2 flex flex-col gap-4 !px-0 sm:flex-row">
   <Link
     href={nextPost ? `/blog/${nextPost.slug}` : '#'}
     class={cn(

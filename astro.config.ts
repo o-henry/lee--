@@ -54,9 +54,12 @@ export default defineConfig({
       [
         rehypePrettyCode,
         {
+          /*
+            'aurora-x' | 'catppuccin-latte' | 'everforest-light' | 'github-light' | 'github-light-default' | 'light-plus' |
+          */
           theme: {
-            light: 'github-light-high-contrast',
-            dark: 'github-dark-high-contrast',
+            light: 'github-light',
+            dark: 'github-dark-dimmed',
           },
           transformers: [
             transformerNotationDiff(),
