@@ -5,6 +5,7 @@
 @import url('https://fonts.cdnfonts.com/css/solway?styles=50538,170611,50536,170612,50537,170615,50534,170614,50535,170613');
 @import url('https://fonts.cdnfonts.com/css/ia-writer-duospace?styles=25006,25007,25004,25005');
 @import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
+@import url('https://fonts.cdnfonts.com/css/apercu-mono-pro?styles=108435,108433,108434,108432');
 
 @tailwind base;
 @tailwind components;
@@ -160,6 +161,10 @@ canvas {
   font-family: "DM Mono", "Noto Sans KR",  monospace;
   font-weight: 300;
   font-style: normal;
+}
+
+.font-apercu { 
+  font-family: 'Apercu Mono Pro', monospace;
 }
 
 .font-locus {
