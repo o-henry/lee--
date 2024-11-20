@@ -26,13 +26,14 @@ const posts = page.data
 ---
 
 <Layout title="Blog" description="Blog">
-  <Container class="flex grow flex-col gap-y-6">
+  <Container class="mb-8 flex grow flex-col gap-y-6">
     <Breadcrumbs
       items={[
-        { label: 'Blog', href: '/blog', icon: '' },
-        { label: `Page ${page.currentPage}`, icon: '' },
+        { label: 'archive', href: '/blog', icon: '' },
+        { label: `page ${page.currentPage}`, icon: '' },
       ]}
     />
+    <div class="mb-4"></div>
 
     <div class="flex min-h-[calc(100vh-18rem)] flex-col gap-y-8">
       <ul class="not-prose flex flex-col gap-4">
