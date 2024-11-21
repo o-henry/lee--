@@ -1,11 +1,10 @@
 ---
 import Breadcrumbs from '@/components/Breadcrumbs.astro'
 import Container from '@/components/Container.astro'
-import ProjectCard from '@/components/ProjectCard.astro'
+import Timeline from '@/components/Timeline.astro'
 import { SITE } from '@/consts'
 import Layout from '@/layouts/Layout.astro'
 import { getCollection } from 'astro:content'
-
 const projects = await getCollection('projects')
 ---
 
@@ -32,14 +31,15 @@ const projects = await getCollection('projects')
 
           <!-- <div class="font-google">Tech Stack</div> -->
           * Swift · SwiftUI · Typescript · Node.js · Kotlin · Python
-
-          <br />
-          <!-- <div class="font-google">Project</div> -->
-          <div class="grid gap-4 sm:grid-cols-1 lg:grid-cols-1">
-            {projects.map((project) => <ProjectCard project={project} />)}
-          </div>
         </p>
       </div>
     </section>
+
+    <!-- Veritcal Tiemline -->
+    <div class="-my-6">
+      {projects.map((project) => <Timeline project={project} />)}
+    </div>
+
+    <div class="mt-8"></div>
   </Container>
 </Layout>
