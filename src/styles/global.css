@@ -136,11 +136,11 @@ canvas {
 }
 
 .font-nanum {
-  font-family: Google Sans Mono, "NanumSquareNeo", sans-serif;
+  font-family: DM Mono, "NanumSquareNeo", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 12px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .font-love { 
@@ -306,7 +306,7 @@ article {
     --secondary-foreground: 0 0% 9%;
     --muted: 0 0% 80.1%;
     --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 80.1%;
+    --accent: 0 0% 80.1%; 
     --accent-foreground: 0 0% 9%;
     --additive: 112 50% 36%;
     --additive-foreground: 0 0% 9%;
@@ -396,7 +396,7 @@ article {
   ==========
   */
   blockquote > p {
-    font-family: "iA Writer Mono S", 'locus_sangsang', monospace !important;
+    font-family: "DM Mono", 'locus_sangsang', monospace !important;
     display: inline;
   }
   blockquote > p:before {
@@ -432,10 +432,15 @@ article {
   h1, h2, h3, h4, h5 {
     @apply font-heading;
     font-weight: 900 !important;
-    color: black;
+    color: black !important;
+  }
+
+  code {
+    color: black !important;
   }
   
   article {
+    
     @apply prose-headings:scroll-mt-20 prose-headings:break-words;
     @apply prose-p:break-words;
     @apply prose-a:!text-primary prose-a:!decoration-primary/50 prose-a:!underline-offset-[3px] prose-a:transition-colors hover:prose-a:!decoration-inherit;
@@ -467,7 +472,8 @@ article {
       }
 
       .dark & span {
-        color: var(--shiki-dark);
+        /* color: var(--shiki-dark); */
+        color: var(--shiki-light); 
       }
     }
 
@@ -482,7 +488,7 @@ article {
 
       /* Code block titles */
       [data-rehype-pretty-code-title] {
-        @apply break-words bg-stone-50 px-4 py-2 tracking-normal text-xs font-medium text-foreground font-google;
+        @apply break-words bg-stone-50 px-4 py-2 tracking-normal text-xs font-medium text-foreground font-dm;
 
         /* Remove top margin from code block if a title is present */
         & + pre {
