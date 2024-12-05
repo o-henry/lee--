@@ -13,6 +13,7 @@
 
 
 /* styles/snow.css 또는 다른 CSS 파일에 추가 */
+
 section[aria-label="Phaser Game"] {
   width: 100%;
   max-width: 800px; /* 필요에 따라 변경 */
@@ -136,7 +137,7 @@ canvas {
 }
 
 .font-nanum {
-  font-family: DM Mono, "NanumSquareNeo", sans-serif;
+  font-family: 'Google-Sans-Mono-Regular', "NanumSquareNeo", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 12px;
@@ -171,7 +172,7 @@ canvas {
 }
 
 .font-locus {
-  font-family: DM Mono, "locus_sangsang";
+  font-family: 'Google-Sans-Mono-Regular', "locus_sangsang";
   font-size: 0.8rem;
 }
 
@@ -188,7 +189,7 @@ canvas {
   font-family: "Sequel";
 }
 .font-google { 
-  font-family: "Google Sans Mono", "Noto Sans KR", monospace;
+  font-family: "Google-Sans-Mono-Regular", "Noto Sans KR", monospace;
   font-style: normal;
 }
 
@@ -284,6 +285,12 @@ canvas {
 
 article {
   & figure[data-rehype-pretty-code-figure] {
+      border: 1px solid rgb(232, 232, 232);
+      padding-left: 1.2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(195, 195, 195, 0.1), 0 2px 4px -2px rgba(201, 201, 201, 0.1);
+
+
       & pre {
           & > code {
               > button:has(> span) {

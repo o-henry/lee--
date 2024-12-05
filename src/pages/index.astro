@@ -1,16 +1,25 @@
 ---
 import Player from '@/components/bento/Player'
+import BlogCard from '@/components/BlogCard.astro'
 import Container from '@/components/Container.astro'
 import Link from '@/components/Link.astro'
+import Timeline from '@/components/Timeline.astro'
 import PhaserGame from '@/components/ui/phaser'
 import { SITE, SOCIAL_LINKS } from '@/consts'
 import Layout from '@/layouts/Layout.astro'
 import { Icon } from 'astro-icon/components'
 import { Image } from 'astro:assets'
+import { getCollection } from 'astro:content'
+
+const projects = await getCollection('projects')
+const allPosts = await getCollection('blog', ({ data }) => !data.draft)
+const posts = allPosts
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, SITE.POSTS_PER_PAGE)
 ---
 
 <Layout title="Home" description={SITE.DESCRIPTION}>
-  <Container>
+  <Container class="mx-auto max-w-[568px] px-4">
     <html>
       <head>
         <script is:inline src="/bundle.min.js" defer></script>
@@ -18,8 +27,8 @@ import { Image } from 'astro:assets'
         <!-- Phaser 게임 번들 -->
       </head>
       <body>
-        <div class="font-love pt-2 text-sm">Henry's Playground</div>
-
+        <div class="font-love pt-2 text-sm font-semibold">Henry</div>
+        <p class="font-dm text-sm font-light">@app dev</p>
         <div class="pb-6"></div>
 
         <section class="mx-auto" aria-label="Phaser Game">
@@ -29,25 +38,12 @@ import { Image } from 'astro:assets'
       </body>
     </html>
 
-    <div class="my-6"></div>
+    <div class="my-3"></div>
 
     <section
-      class="md:[grid-template-areas:
-      'a_m_m_n'_'e_e_e_c'_'h_f_f_g'_'h_i_j_k'] *:rounded3xl
-      mx-auto
-      grid
-      max-w-[746px]
-      max-w-screen-md
-      grid-cols-4
-      gap-4
-      [grid-template-areas:'a_m'_'b_b'_'b_b'_'b_b'_'e_e'_'h_i'_'h_c'_'k_c'_'d_d'_'d_d'_'g_g'_'g_g'_'f_f'_'j_j'_'j_j']
-      sm:grid-cols-4
-      sm:[grid-template-areas:'a_m_m_n'_'e_e_e_c'_'h_f_f_g'_'h_i_j_k']
-      md:px-0
-      xl:grid-cols-4
-      xl:[grid-template-areas:'a_m_m_n'_'e_e_e_c'_'h_f_f_g'_'h_i_j_k']
-      xl:[&:hover:has(>.has-overlay:hover)>.first>.overlay]:opacity-100
-      xl:[&:hover>*:not(.first):hover_.overlay]:opacity-100"
+      class="mx-auto grid grid-cols-2 gap-4 [grid-template-areas:'a_m'_'n_m']
+        sm:grid-cols-4
+        sm:[grid-template-areas:'a_m_m_n']"
     >
       <Link href="mailto:c.henry.9209@gmail.com" external>
         <div
@@ -60,7 +56,7 @@ import { Image } from 'astro:assets'
 
           <Icon
             name="mdi:at"
-            class="absolute z-[1] size-1/2 text-primary sm:size-20"
+            class="absolute z-[1] size-1/2 text-primary sm:size-14"
             aria-hidden="true"
           />
           <div
@@ -71,7 +67,7 @@ import { Image } from 'astro:assets'
       </Link>
 
       <div
-        class="has-overlay relative flex items-center justify-center [grid-area:m] hover:bg-none"
+        class="has-overlay relative col-span-1 flex items-center justify-center [grid-area:m] hover:bg-none sm:col-span-2"
       >
         <div
           class="overlay xl:opacity-1 absolute inset-0 size-full rounded-xl bg-gradient-to-r from-red-200 to-yellow-200 transition-opacity duration-200"
@@ -110,5 +106,158 @@ import { Image } from 'astro:assets'
         </div>
       </Link>
     </section>
+
+    <div class="mt-12">
+      <!-- Tabs Navigation -->
+      <div class="border-b border-gray-200">
+        <div class="flex space-x-8">
+          <button
+            class="font-bantayog tab-item group relative inline-flex items-center border-b-2 border-transparent px-1 py-2 font-extralight lowercase text-primary"
+            data-tab="archive"
+            aria-current="page"
+          >
+            <span>posts</span>
+            <span
+              class="bottom-line absolute inset-x-0 -bottom-[2px] h-[2px] bg-gradient-to-r from-orange-400 to-fuchsia-400"
+            ></span>
+          </button>
+          <button
+            class="font-bantayog tab-item group relative inline-flex items-center border-b-2 border-transparent px-1 py-2 lowercase text-gray-500 hover:border-gray-300 hover:text-gray-700"
+            data-tab="author"
+          >
+            <span>About</span>
+            <span
+              class="bottom-line absolute inset-x-0 -bottom-[2px] h-[2px] bg-transparent"
+            ></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab Panels -->
+      <div class="mt-0">
+        <!-- Archive Tab Panel -->
+        <div
+          id="archive-content"
+          class="tab-content"
+          role="tabpanel"
+          aria-labelledby="archive-tab"
+        >
+          <div class="flex min-h-[calc(100vh-18rem)] flex-col gap-y-8 px-1">
+            <ul class="not-prose flex flex-col gap-4">
+              {
+                posts.map((post) => (
+                  <li>
+                    <BlogCard entry={post} />
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+
+        <!-- Author Tab Panel -->
+        <div
+          id="author-content"
+          class="tab-content hidden"
+          role="tabpanel"
+          aria-labelledby="author-tab"
+        >
+          <div class="prose prose-slate max-w-none">
+            <Container class="flex flex-col gap-y-6 py-4">
+              <section>
+                <div class="min-w-full">
+                  <p class="font-locus mb-8 text-xl leading-normal">
+                    안녕하세요. 저는 이찬행 이라고 합니다. 컴퓨터 공학과를 중퇴
+                    후, 부트캠프 과정을 수료, 리액트 프론트엔드 개발을
+                    시작하였으며 이후 다양한 언어와 다양한 기술들을 학습하였고
+                    현재는 iOS 앱 개발을 하고 있습니다.
+
+                    <br />
+                    <br />
+
+                    * 2019-2020 : 코드스테이츠 부트캠프
+                    <br />
+                    * 2020.02-2020.06 : IPS Papaya(주)
+                    <br />
+
+                    <!-- <div class="font-dm">Tech Stack</div> -->
+                    * Swift · SwiftUI · Typescript · Node.js · Kotlin · Python
+                  </p>
+                </div>
+              </section>
+
+              <!-- Veritcal Tiemline -->
+              <div class="-my-6">
+                {projects.map((project) => <Timeline project={project} />)}
+              </div>
+
+              <div class="mt-8"></div>
+            </Container>
+          </div>
+        </div>
+      </div>
+    </div>
   </Container>
+
+  <script is:inline>
+    function initializeTabs() {
+      const tabItems = document.querySelectorAll('.tab-item')
+      const tabContents = document.querySelectorAll('.tab-content')
+
+      tabItems.forEach((tab) => {
+        tab.addEventListener('click', (e) => {
+          e.preventDefault()
+
+          // Update tab styles
+          tabItems.forEach((item) => {
+            item.classList.remove('text-primary')
+            item.classList.add('text-gray-500')
+            // Clear the bottom line
+            const bottomLine = item.querySelector('.bottom-line')
+            if (bottomLine) {
+              bottomLine.classList.remove(
+                'bg-gradient-to-r',
+                'from-orange-400',
+                'to-red-400',
+              )
+              bottomLine.classList.add('bg-transparent')
+            }
+            item.setAttribute('aria-current', 'false')
+          })
+
+          // Add active styles to clicked tab
+          tab.classList.remove('text-gray-500')
+          tab.classList.add('text-primary')
+          // Show the gradient bottom line
+          const bottomLine = tab.querySelector('.bottom-line')
+          if (bottomLine) {
+            bottomLine.classList.remove('bg-transparent')
+            bottomLine.classList.add(
+              'bg-gradient-to-r',
+              'from-orange-400',
+              'to-red-400',
+            )
+          }
+          tab.setAttribute('aria-current', 'page')
+
+          // Update content visibility
+          const targetId = tab.getAttribute('data-tab')
+          tabContents.forEach((content) => {
+            content.classList.add('hidden')
+            content.setAttribute('aria-hidden', 'true')
+          })
+
+          const activeContent = document.getElementById(`${targetId}-content`)
+          activeContent?.classList.remove('hidden')
+          activeContent?.setAttribute('aria-hidden', 'false')
+        })
+      })
+    }
+
+    // Initialize on first load
+    document.addEventListener('DOMContentLoaded', initializeTabs)
+
+    // Initialize on view transitions
+    document.addEventListener('astro:page-load', initializeTabs)
+  </script>
 </Layout>
