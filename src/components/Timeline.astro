@@ -15,11 +15,13 @@ const { project } = Astro.props
   >
     <div>
       <div class="font-locus mb-1 text-2xl font-medium text-indigo-500 sm:mb-0">
-        <Link href={project.data.link} class="block no-underline" external
-          >{project.data.name}</Link
+        <Link
+          href={project.data.link}
+          class="block text-blue-600 no-underline"
+          external>{project.data.name}</Link
         >
         <div class="font-dm text-xs text-slate-600">
-          {project.data.date}
+          <!-- {project.data.date} -->
         </div>
         <div class="font-locus leading-tight text-slate-500">
           {project.data.description}
